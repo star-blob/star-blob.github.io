@@ -3,81 +3,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Star-Blob's Blog</title>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-color: #1a1a1a;
-            color: #ffffff;
-            font-family: 'Comfortaa', Arial, sans-serif;
-            padding: 20px;
-            margin: 0;
-        }
+<style>
+    body {
+        background-color: #000000;  /* True black for AMOLED screens */
+        color: #e0e0e0;  /* Light gray text for readability */
+        font-family: 'Comfortaa', Arial, sans-serif;
+        padding: 20px;
+        margin: 0;
+    }
 
-        .container {
-            max-width: 800px;
-            margin: auto;
-        }
+    .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        background: rgba(15, 15, 15, 0.9);  /* Dark background with slight transparency */
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);  /* Enhanced shadow for depth */
+        backdrop-filter: blur(10px);  /* Add blur effect */
+    }
 
-        .intro-content {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 20px;
-        }
+    .intro-content {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 22px;  /* Slightly larger for better readability */
+    }
 
-        .intro-content strong {
-            font-weight: bold;
-            color: #ff6600;
-        }
+    .intro-content strong {
+        font-weight: bold;
+        color: #00ff7f;  /* Bright green accent color */
+    }
 
-        .intro-content em {
-            font-style: italic;
-        }
+    .intro-content em {
+        font-style: italic;
+    }
 
-        .blog-post {
-            background-color: #333333;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
+    .blog-post {
+        background: rgba(30, 30, 30, 0.9);  /* Lighter post background with transparency */
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 25px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);  /* Softer shadow */
+        transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        backdrop-filter: blur(5px);  /* Add blur effect */
+    }
 
-        .blog-post:hover {
-            transform: translateY(-5px);
-        }
+    .blog-post:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);  /* Deeper shadow on hover */
+        background: rgba(30, 30, 30, 0.95);  /* Slightly darker on hover */
+    }
 
-        .blog-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #ff6600;
-        }
+    .blog-title {
+        font-size: 26px;  /* Slightly larger for emphasis */
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #00ff7f;  /* Bright green accent color */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Text shadow for depth */
+    }
 
-        .blog-content {
-            font-size: 18px;
-            line-height: 1.5;
-            color: #cccccc;
-        }
+    .blog-content {
+        font-size: 18px;
+        line-height: 1.6;  /* Increased line height for readability */
+        color: #d0d0d0;  /* Softer text color */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);  /* Text shadow for depth */
+    }
 
-        .blog-content:last-child {
-            margin-bottom: 0;
-        }
+    .blog-content:last-child {
+        margin-bottom: 0;
+    }
 
-        a {
-            color: #ff6600;
-            text-decoration: none;
-        }
+    a {
+        color: #00ff7f;  /* Bright green link color */
+        text-decoration: none;
+        transition: color 0.3s, text-shadow 0.3s;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    a:hover {
+        text-decoration: underline;
+        color: #66ffb2;  /* Slight color change on hover */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Text shadow on hover */
+    }
 
-        /* Separator style */
-        .blog-separator {
-            height: 20px;
+    /* Separator style */
+    .blog-separator {
+        height: 30px;  /* Increased height for better separation */
+        background-color: transparent;  /* Clear background */
+    }
+    
+    /* Add a fancy button style */
+    .fancy-button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 10px 0;
+        color: #ffffff;
+        background-color: #00ff7f;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.3s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .fancy-button:hover {
+        background-color: #66ffb2;
+        transform: translateY(-2px);
+    }
+
+    .fancy-button:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Add animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
         }
-    </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9207827694878583" crossorigin="anonymous"></script>
-</head>
+        to {
+            opacity: 1;
+        }
+    }
+
+    body {
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .blog-post {
+        animation: fadeIn 1.5s ease-in-out;
+    }
+</style>
+    <script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202405210101/show_ads_impl_with_ama.js?client=ca-pub-9207827694878583&amp;plah=star-blob.github.io&amp;aplac=true"></script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9207827694878583" crossorigin="anonymous" data-checked-head="true"></script>
+<meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVjYXJ0aW9uIiwiZXhwaXJ5IjoxNzU4MDY3MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZX0="><meta http-equiv="origin-trial" content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"></head>
 
 <body>
     <div class="container">
@@ -104,8 +162,8 @@
             <p class="blog-content">Now, let's talk about his hobbies, shall we? Not content with just being a drama queen, Bl0xernewb also has a thing for making body pillows of underage video game characters. Yeah, you heard that right. And to top it all off, he's binge-watching adult content like it's going out of style. Real classy, bro, real fuckin' classy.
 </p>
         <p class="blog-content">So, to sum it up: Bl0xernewb is a lying, cheating, IP-grabbing, underage-pillow-making, drama-loving piece of human garbage. Stay tuned for more thrilling episodes of "To Expose Someone," where we'll dive even deeper into the cesspool of human depravity. Until next time, keep being dipshits and loners, my fellow drama junkies
-<p class="blog-content">But wait, there's more! We were supposed to collaborate on a Friday Night Funkin' mod, but guess what? This spineless coward bails on me halfway through like a scared little puppy, leaving me to pick up the pieces. And then, to add insult to injury, he has the audacity to accuse me of stealing his vectors. Yeah, 'cause that makes sense.
-</p></p></div>
+</p><p class="blog-content">But wait, there's more! We were supposed to collaborate on a Friday Night Funkin' mod, but guess what? This spineless coward bails on me halfway through like a scared little puppy, leaving me to pick up the pieces. And then, to add insult to injury, he has the audacity to accuse me of stealing his vectors. Yeah, 'cause that makes sense.
+</p><p></p></div>
 
 
         <div class="blog-post">
@@ -117,8 +175,8 @@
         </div><div class="blog-post">
             <h2 class="blog-title">May 2024 - Another Month, Another Disaster - Discontinued</h2>
             <p class="blog-content">Well, would you look at that, another month has passed, and life is still a rollercoaster. This month, I managed to mess up making my toast ever single day, got hacked by KinitoPET, and lost my 2FA to one of my accounts. Oh, and did I mention I got banned for being cyberbullied? Yeah, that happened. Anyway, here's to hoping next month is slightly less of a mess. Cheers.</p>
-            <p class="blog-content">In addition to the usual gaming fails, I also had some epic fails in real life. Let's just say I tried cooking and ended up with 2 half burned burger buns. Classic one.</p>
-            <p class="blog-content">On the bright side, I discovered a new game that I suck at. Well atleast I didn't burn another piece of toast. But hey, at least it's a new game. even though I haven't won yet, I remain being Star-Blob.</p>
+            <p class="blog-content">In addition to the usual gaming fails, I also had some epic fails in real life. Let's just say I tried cooking and ended up with 2 half-burned burger buns. Classic one.</p>
+            <p class="blog-content">On the bright side, I discovered a new game that I suck at. Well, at least I didn't burn another piece of toast. But hey, at least it's a new game. Even though I haven't won yet, I remain being Star-Blob.</p>
             <p class="blog-content">As the month comes to a close, I find it hard to even post, but I will start posting again this month. Here's to embracing the chaos and looking forward to another month of gaming adventures. Oh, and speaking of adventures, I'm seriously considering <a href="#">Making my own game</a>, who knows?</p>
             <p class="blog-content">Until next time, stay weird and stay chaotic, fellow gamers!</p>
         </div>
@@ -128,4 +186,6 @@
         <div class="blog-separator"></div>
     </div>
 
-</body></html>
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://pagead2.googlesyndication.com/pagead/ads?ltd_cs=1&amp;client=ca-pub-9207827694878583&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;abgtt=6&amp;lmt=1716828357&amp;plat=8%3A4194304%2C9%3A134250504%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1081344%2C32%3A32%2C41%3A32%2C42%3A32&amp;plas=343x624_l%7C343x624_r&amp;format=0x0&amp;url=https%3A%2F%2Fstar-blob.github.io%2F&amp;pra=5&amp;wgl=1&amp;easpi=0&amp;aihb=0&amp;asro=0&amp;aslmct=0.7&amp;asamct=0.7&amp;uach=WyJXaW5kb3dzIiwiMTUuMC4wIiwieDg2IiwiIiwiMTI1LjAuNjQyMi4xMTIiLG51bGwsMCxudWxsLCI2NCIsW1siR29vZ2xlIENocm9tZSIsIjEyNS4wLjY0MjIuMTEyIl0sWyJDaHJvbWl1bSIsIjEyNS4wLjY0MjIuMTEyIl0sWyJOb3QuQS9CcmFuZCIsIjI0LjAuMC4wIl1dLDBd&amp;dt=1716829135604&amp;bpp=1&amp;bdt=86&amp;idt=9&amp;shv=r20240522&amp;mjsv=m202405210101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;eoidce=1&amp;nras=1&amp;correlator=7617719970143&amp;frm=20&amp;pv=2&amp;ga_vid=1993974139.1716829136&amp;ga_sid=1716829136&amp;ga_hid=817331287&amp;ga_fc=0&amp;u_tz=120&amp;u_his=1&amp;u_h=864&amp;u_w=1536&amp;u_ah=816&amp;u_aw=1536&amp;u_cd=24&amp;u_sd=1.25&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=1519&amp;bih=695&amp;scr_x=0&amp;scr_y=0&amp;eid=44759875%2C44759926%2C44759837%2C31083638%2C95329723%2C95331687%2C95331983%2C95331712%2C21065725%2C31078663%2C31078665%2C31078668%2C31078670&amp;oid=2&amp;pvsid=2436144576372724&amp;tmod=1777083892&amp;uas=0&amp;nvt=2&amp;fsapi=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1536%2C0%2C1536%2C816%2C1536%2C695&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;bz=1&amp;td=1&amp;nt=1&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=21" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><iframe id="google_esf" name="google_esf" src="https://pagead2.googlesyndication.com/pagead/html/r20240522/r20110914/zrt_lookup_fy2021.html" style="display: none;"></iframe>
+</body>
+</html>
